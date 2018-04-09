@@ -1,31 +1,315 @@
 @import "vars"
 
+// <=992px
+@media (min-width: 769px) and (min-height: 531px)
+	.black-sidebar
+		background-color: #171717
+		.sidebar-menu-link,
+		.contact-item
+			color: #fff
+			&:hover
+				color: $accent
+		.sidebar-menu-link svg,
+		.contact-icon svg
+			fill: #fff
+	.white-sidebar
+		background-color: #e8e8e8
+		.sidebar-menu-link,
+		.contact-item
+			color: #555
+			&:hover
+				color: $accent
+		.sidebar-menu-link svg,
+		.contact-icon svg
+			fill: #555
+	.gray-sidebar
+		background-color: #35363b
+		.sidebar-menu-link,
+		.contact-item
+			color: #fff
+			&:hover
+				color: $accent
+		.sidebar-menu-link svg,
+		.contact-icon svg
+			fill: #fff
+@media(max-width: 1100px)
+	.contact-phones-line .item
+		width: 40%
 
-/*==========  Desktop First  ==========*/
+// <=992px
+@media(max-width: 992px)
+	.main-sidebar
+		width: 307px
+	.content-wrap
+		width: calc(100% - 307px)
+	.dark-heading, .white-heading
+		font-size: 30px
+	.main-page-fscreen .name
+		font-size: 26px
+	.process-order
+		justify-content: space-between
+	.process-order .half-column
+		padding: 0
+		width: 45%
 
-// ≥1200px
-+media-breakpoint-down(lg)
+//media for sidebar
+@media (max-width: 768px), (max-height: 530px)
+	body
+		padding-bottom: 64px
+	.section-padding
+		padding-right: 9%
+	.main-sidebar
+		width: 100%
+		top: auto
+		right: 0
+		height: auto
+		padding: 11px 0
+		background: #fff
+	.content-wrap
+		width: 100%
+		margin: 0
+	.contact-line,
+	.photo-line
+		display: none
+	.sidebar-links-list
+		display: flex
+		justify-content: space-around
+	.sidebar-menu-link
+		color: #555
+		svg
+			fill: #555
+	.sidebar-menu-link-wrap
+		margin-bottom: 0
+	.nav-icon-wrap
+		margin-right: 10px
 
-// ≥992px
-+media-breakpoint-down(md)
+// <=768px
+@media(max-width: 768px)
 
-// ≥768px
-+media-breakpoint-down(sm)
+	//main fscreen start
+	.main-page-fscreen
+		padding-bottom: 30px
+		height: auto
+		padding-top: 105px
+	.mobile-logo-wrap,
+	.mobile-hr,
+	#advantages-slider
+		display: block
+	.mobile-contact-line
+		display: flex
+	//main fscreen start
 
-// ≥576px
-+media-breakpoint-down(xs)
+	//contacts start
+	.advice-page-fscreen,
+	.mobile-bg-contacts,
+	.practice-page-fscreen
+		height: auto
+		padding-top: 106px
+		padding-bottom: 20px
+	.mobile-bg-contacts
+		background: url(../img/images/contacts-mob.png) no-repeat center
+		background-size: cover
+		.dark-heading
+			text-align: center
+			color: #fff
+		.mobile-contact-line
+			margin-top: 80px
+	.map-wrap
+		min-height: 70vh
+	//contacts end
+	//practice start
+	.practice-page-fscreen
+		background: url(../img/images/practice-mob.png) no-repeat center
+		background-size: cover
+		.white-heading-mob
+			display: block
+			text-align: center
+			margin-bottom: 72px
+		.white-heading:not(.white-heading-mob)
+			display: none
+	//practice end
+	//advice start
+	.advice-page-fscreen
+		background: url(../img/images/advice-mob.png) no-repeat center
+		background-size: cover
+		.white-heading
+			text-align: center
+			margin-bottom: 87px
+	.plain-text-screen,
+	.advice-contact-form-screen
+		height: auto
+		min-height: auto
+	.contact-form-screen .contact-form
+		width: 100%
+	.advice-contact-form-screen
+		.dark-heading
+			text-align: center
+			margin-bottom: 23px
+			line-height: 1.6
+	.contact-form.advice-contact-form button
+		margin-top: 7px
+	.contact-form.advice-contact-form+.email-line
+		margin-top: 5px
+	//advice end
 
 
-/*==========  Mobile First  ==========*/
+@media(max-width: 576px)
+	body
+		padding-bottom: 88px
+	.nav-icon-wrap
+		margin-right: auto
+		margin-left: auto
+	.dark-heading, .white-heading
+		font-size: 24px
+	.main-page-fscreen .name
+		font-size: 16px
+	.sidebar-menu-link
+		flex-direction: column
+	.services-screen
+		text-align: center
+	.work-process-screen
+		background-color: #e8e8e8
+		padding-top: 39px
+		padding-bottom: 39px
+		text-align: center
+	//WORK PROCESS MOBILE SLIDER START
+	#work-process-mob-slider
+		margin: 0
+		.half-column
+			outline: none
+		.number
+			font-size: 16px
+			margin: 25px auto
+			background: #333
+		.half-column
+			padding-bottom: 29px
+		.slick-arrow
+			position: absolute
+			bottom: 0
+			opacity: 0.7
+			border: none
+			font-size: 0
+			width: 44px
+			height: 36px
+			padding: 0
+		.slick-prev
+			left: calc(50% - 51px)
+			background: url(../img/icons/next.svg) no-repeat center, $accent
+			background-size: 20px
+			transform: rotate(180deg)
+			z-index: 50
+		.slick-next
+			right: calc(50% - 51px)
+			background: url(../img/icons/next.svg) no-repeat center, $accent
+			background-size: 20px
+	//WORK PROCESS MOBILE SLIDER END
 
-// ≤576px
-+media-breakpoint-up(sm)
+	//MAIN PAGE CONTACT FORM START
+	.contact-form-screen .contact-form
+		width: 100%
+		margin-bottom: 32px
+	//MAIN PAGE CONTACT FORM END
+	.services-container
+		flex-direction: column
+		margin-bottom: 20px
+	.service-item
+		width: 100%
+		margin: 0
+		padding: 19px 0
+		flex-direction: row
+		align-items: center
+		border-bottom: 1px solid #ccc
 
-// ≤768px
-+media-breakpoint-up(md)
+		background: url(../img/icons/next-black.svg) no-repeat
+		background-size: 27px
+		background-position: right 19px
+		.icon-wrap
+			width: 26px
+			height: 26px
+			margin-right: 15px
+			margin-bottom: 0
+	.contact-phones-line .item
+		width: 100%
+	.contact-email-line
+		margin-bottom: 24px
+	.contact-address-line,
+	.contact-phones-line
+		margin-bottom: 14px
+	.contact-phones-line 
+		.item
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+			&:nth-child(n+2) svg
+				fill: #fff
+	//practice start
+	.practice-item
+		width: 100%
+		position: relative
+		display: flex
+		border-bottom: 1px solid rgba(19,19,19,0.2)
+		padding-left: 0
+		.icons-line
+			margin-right: 20px
+			margin-bottom: 0
+		.icon-next
+			position: absolute
+			right: 0
+			fill: #131313
+	//practice end
 
-// ≤992px
-+media-breakpoint-up(lg)
+@media (max-width: 576px), (max-height: 530px)
+	.contact-form-screen
+		height: auto
+		padding-top: 40px
+		padding-bottom: 33px
+		.white-heading
+			text-align: center
+			margin-bottom: 18px
 
-// ≤1200px
-+media-breakpoint-up(xl)
+@media(max-width: 400px)
+	body
+		font-size: 14px
+	.mobile-logo-wrap
+		left: 10px
+	.dark-heading, .white-heading
+		font-size: 20px
+	.mobile-contact-line
+		font-size: 10px
+	.services-screen,
+	.work-process-screen,
+	.contact-form-screen
+		padding-left: 3%
+		padding-right: 3%
+	.main-sidebar
+		height: 88px
+	.sidebar-menu-link
+		font-size: 10px
+
+	//landscape
+@media (orientation: landscape) and (max-width: 768px) and (min-aspect-ratio: 13/9),
+(orientation: landscape) and (max-height: 530px) and (min-aspect-ratio: 13/9)
+	body
+		padding-bottom: 0
+	#main-sidebar
+		top: 0
+		//background-color: red!important
+		//(orientation: landscape) and (max-height: 530px)
+		left: auto
+		bottom: 0
+		right: 0
+		width: 85px
+		height: 100%
+	.sidebar-nav
+		margin: 0
+		height: 100%
+	.sidebar-links-list
+		flex-direction: column
+		align-content: space-around
+		height: 100%
+	.sidebar-menu-link
+		flex-direction: column
+		font-size: 10px
+	.content-wrap
+		width: calc(100% - 85px)
+		margin-right: auto

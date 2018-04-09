@@ -1,6 +1,8 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "_mixins/bgscreen"
+
 
 ::placeholder
 	color: #666
@@ -10,7 +12,7 @@
 	color: #fff
 
 html, body
-	height: 100%
+	//height: 100%
 
 body
 	font-size: 16px
@@ -19,6 +21,7 @@ body
 	line-height: 1.65
 	font-family: $default-font
 	overflow-x: hidden
+	color: #333
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -26,6 +29,13 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+
+a, a:hover, a:focus
+	color: $accent
+	text-decoration: none
+	transition: all .15s ease-in-out
+
+//COMMON START
 
 .img-responsive
 	display: block
@@ -40,6 +50,476 @@ body
 b, strong
 	font-weight: bold
 
+.white-heading, 
+.dark-heading
+	display: block
+	margin: 0
+	font-family: 'lora'
+	font-size: 36px
+	letter-spacing: 1.4px
+.white-heading
+	line-height: 1.5
+	color: #fff
+.dark-heading
+	line-height: 0.67
+	color: #333
 
+.bg-screen
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+.content-wrap
+	width: 69%
+	margin-left: auto
+
+.section-padding
+	padding-right: 11%
+	padding-left: 9%
+.icon-wrap svg
+	max-width: 100%
+
+//COMMON END
+
+.main-sidebar
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 69%
+	width: 31%
+	background-color: #171717
+	padding: 19px 2.5% 0 5.9%
+	z-index: 100
+
+	display: flex
+	flex-direction: column
+	transition: all .3s ease-in-out
+
+.logo-wrap
+	width: 63px
+	height: 63px
+
+.contact-line
+	display: flex
+	justify-content: space-between
+
+.contact-item
+	font-size: 14px
+	color: #fff
+	display: flex
+	line-height: 1.71
+
+	&:first-child
+		margin-bottom: 10px
+	&:hover
+		svg
+			fill: $accent
+
+.contact-icon
+	width: 26px
+	height: 26px
+	margin-right: 9px
+	svg
+		max-width: 100%
+		fill: #fff
+		transition: fill .15s ease-in-out
+
+.photo-line
+	width: 100%
+.photo-wrap
+	width: 130px
+	height: 130px
+	border-radius: 50%
+	overflow: hidden
+	margin: 0 auto
+
+.sidebar-menu-link-wrap
+	margin-bottom: 40px
+	&:last-child
+		margin-bottom: 0
+
+.sidebar-menu-link
+	color: #fff
+	font-size: 16px
+	line-height: 1.5
+	letter-spacing: 0.6px
+	transition: all .15s ease-in-out
+
+	display: flex
+	align-items: center
+
+	svg
+		fill: #fff
+		transition: fill .15s ease-in-out
+	&:hover
+		//font-size: 18px
+		.nav-icon-wrap
+			margin-right: 25px
+		svg
+			fill: $accent
+
+.sidebar-links-list
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+.nav-icon-wrap
+	width: 42px
+	height: 42px
+	margin-right: 22px
+	transition: all .15s ease-in-out
+	svg
+		max-width: 100%
+
+.sidebar-nav
+	margin: auto 0
+.photo-line
+	margin-top: auto
+
+
+//MAIN PAGE START
+//FIRST SCREEN START
+.main-page-fscreen
+	+bgscreen('../img/images/1.png')
+
+	.name
+		font-size: 30px
+		line-height: normal
+		color: $accent
+		margin-top: 30px
+
+.mobile-logo-wrap
+	display: none
+	position: absolute
+	width: 54px
+	height: 54px
+	top: 10px
+.mobile-contact-line
+	display: none
+	width: 100%
+	justify-content: space-between
+
+	.item
+		color: #fff
+		display: flex
+
+	.icon-wrap
+		width: 16px
+		height: 16px
+		margin-right: 16px
+	svg
+		fill: #fff
+.main-page-fscreen .mobile-contact-line
+	margin-top: 37px
+.mobile-hr
+	display: none
+	width: 100%
+	border: none
+	border-top: 1px solid #fff
+	margin: 39px 0
+
+//MOBILE ADVANTAGES SLIDER START
+#advantages-slider
+	display: none
+	padding-bottom: 55px
+
+	.slick-dots
+		padding: 0
+		margin: 0
+		list-style-type: none
+		display: flex
+		font-size: 0
+		justify-content: center
+		width: 100%
+		position: absolute
+		bottom: 0px
+
+
+		li
+			margin-right: 20px
+			&:last-child
+				margin-right: 0
+
+		button
+			width: 11px
+			height: 11px
+			border: none
+			background-color: #acacac
+			border-radius: 50%
+	.slick-active button
+		background-color: $accent
+.advantage-slide
+	.heading,
+	.text
+		display: block
+		text-align: center
+	.heading
+		color: #fff
+		font-size: 24px
+		margin-bottom: 24px
+	.text
+		font-size: 18px
+		color: #eee
+		line-height: 1.33
+		padding: 0 20%
+
+//MOBILE ADVANTAGES SLIDER END
+
+//FIRST SCREEN END
+
+//SERVIES SCREEN START
+.services-screen
+	padding-top: 80px
+	padding-bottom: 40px
+	padding-right: 20%
+
+	.text-content
+		font-size: 18px
+		line-height: 1.33
+		letter-spacing: 0.7px
+		color: #555
+		margin: 50px 0
+		//padding-right: 12%
+
+.services-container
+	display: flex
+	flex-wrap: wrap
+
+.service-item
+	width: 50%
+	display: flex
+	flex-direction: column
+	align-items: center
+	color: #333
+	font-size: 18px
+	line-height: 1
+	margin-bottom: 40px
+	text-align: center
+
+	.icon-wrap
+		width: 47px
+		height: 47px
+		margin-bottom: 20px
+
+	svg
+		fill: $accent
+//SERVIES SCREEN END
+//WORK PROCESS SCREEN START
+.work-process-screen
+	padding-top: 80px
+	padding-bottom: 80px
+.process-order
+	margin: 50px 0 0 0
+	padding: 0
+	display: flex
+	flex-wrap: wrap
+	list-style-type: none
+	font-size: 16px
+	line-height: 1.45
+	letter-spacing: 0.6px
+	p
+		margin: 0
+	.number
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 42px
+		width: 42px
+		background-color: $accent
+		font-size: 27px
+		color: #fff
+		line-height: 0.67
+		border-radius: 50%
+		margin-bottom: 30px
+	.half-column
+		padding-right: 12%
+		&:nth-child(1)
+			margin-bottom: 30px
+.half-column
+	width: 50%
+//WORK PROCESS SCREEN END
+//CONTACT FORM SCREEn START
+.main-contact-form-screen
+	+bgscreen('../img/images/4.png')
+.contact-form-screen
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	padding-right: 35%
+	.contact-form
+		display: flex
+		flex-direction: column
+		width: 90%
+		font-size: 16px
+		line-height: 1.88
+
+		input, button
+			background: transparent
+		input::placeholder
+				color: #fff
+		input
+			border: none
+			border-bottom: 1px solid #fff
+			width: 100%
+			padding: 0 11px
+			margin-bottom: 35px
+			color: #fff
+			transition: all .25s ease-in-out
+			&::placeholder
+				transition: all .25s ease-in-out
+			&:focus
+				color: $accent
+				border-bottom: 1px solid $accent
+				&::placeholder
+					color: $accent
+		button
+			border: solid 2px $accent
+			line-height: normal
+			padding: 7px 0
+			color: #fff
+			transition: all .25s ease-in-out
+			&:hover
+				background: $accent
+				cursor: pointer
+	.email-line
+		color: #fff
+		a:hover
+			text-decoration: underline
+	.caption
+		display: inline-block
+		margin-right: 30px
+//CONTACT FORM SCREEn END
+//MAIN PAGE END
+
+//ADVICE PAGE START
+.advice-page-fscreen
+	+bgscreen('../img/images/2.png')
+
+//PLAIN TEXT SCREEN START
+.plain-text-screen
+	padding-top: 47px
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+	.dark-heading
+		margin-bottom: 40px
+//PLAIN TEXT SCREEN END
+
+//CONTACT FORM SCREEN START
+.advice-contact-form-screen
+	+bgscreen('../img/images/romb.png')
+	background-repeat: repeat
+	padding-top: 70px
+.contact-form.advice-contact-form
+	
+	input::placeholder
+		color: #666
+	
+	input
+			border-bottom-color: #666
+	button
+		color: #666
+		&:hover
+			color: #fff
+
+	&+.email-line
+		color: #666
+
+//CONTACT FORM SCREEN END
+//ADVICE PAGE END
+//CONTACT PAGE START
+.contact-info-page
+	min-height: 100vh
+.mobile-bg-contacts
+	padding-top: 80px
+	height: 104px
+.contact-info
+	min-height: calc(100vh - 104px)
+	display: flex
+	flex-direction: column
+.contact-info-links
+	//padding-top: 80px
+.contact-wrap
+	margin-top: 40px
+.contact-address-line,
+.contact-phones-line,
+.contact-email-line
+	margin-bottom: 38px
+	.icon-wrap
+		width: 16px
+		height: 16px
+		margin-right: 10px
+	svg
+		fill: $accent
+	.item
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+	a
+		color: #333
+		&:hover
+			color: $accent
+.contact-phones-line
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+.map-wrap
+	flex-grow: 1
+	display: flex
+
+	iframe
+		width: 100%
+		height: auto
+//CONTACT PAGE END
+
+//PRACTICE PAGE START
+.white-heading-mob
+	display: none
+.practice-page-fscreen
+	+bgscreen('../img/images/3.png')
+.practice-links
+	//min-height: 100vh
+	padding-top: 50px
+	padding-right: 16%
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+.practice-item .icons-line
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	margin-bottom: 22px
+.icons-line svg
+	width: auto
+	height: 30px
+	fill: $accent
+	transition: all .25s ease-in-out
+.practice-item
+	width: 49%
+	padding: 30px
+	line-height: 1.5
+	color: #333
+	transition: all .25s ease-in-out
+	margin-bottom: 10px
+	position: relative
+
+	&:hover
+		background: $accent
+		transition: all .25s ease-in-out
+		color: #fff
+		svg
+			fill: #fff
+		.icon-next
+			right: 0px
+.icon-next
+	position: relative
+	right: 6px
+	transition: all .25s ease-in-out
+//PRACTICE PAGE END
 
 @import "media" // Always at the end
