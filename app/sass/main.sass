@@ -73,6 +73,7 @@ b, strong
 .content-wrap
 	width: 69%
 	margin-left: auto
+	position: relative
 
 .section-padding
 	padding-right: 11%
@@ -177,6 +178,15 @@ b, strong
 	margin: auto 0
 .photo-line
 	margin-top: auto
+
+//styles for open keyboards on mobiles
+.sidebar-hidden
+	display: none!important
+.main-full-width
+	width: 100%!important
+.body-no-padding
+	padding: 0!important
+
 
 
 //MAIN PAGE START
@@ -521,5 +531,231 @@ b, strong
 	right: 6px
 	transition: all .25s ease-in-out
 //PRACTICE PAGE END
+
+//article page
+
+.back-link
+	display: flex
+	padding-top: 15px
+	padding-bottom: 15px
+	border-bottom: 1px solid rgba(19, 19, 19, 0.2)
+
+.back-icon-wrap
+	width: 24px
+	height: auto
+	svg
+		transform: rotate(180deg)
+.article-section-wrap
+	padding-top: 40px
+	.dark-heading
+		margin-bottom: 20px
+
+.subcats-list
+	padding: 0
+	margin: 36px 0 0 0
+	list-style-type: none
+.next-cat-ico
+	position: relative
+	width: 20px
+	fill: #333
+	transition: all .15s ease-in-out
+	right: 0
+.subcat-item:first-child .subcat-link
+	border-top: 1px solid rgba(19,19,19,0.2)
+.subcat-link
+	display: flex
+	align-items: center
+	position: relative
+	color: #333
+	padding: 24px 21px 24px 42px
+	background: url('../img/icons/diamond-accent.svg') no-repeat left center
+	background-size: 15px 15px
+	border-bottom: 1px solid rgba(19,19,19,0.2)
+
+	&:hover .next-cat-ico
+		fill: $accent
+		right: -5px
+.subcat-name
+	flex-grow: 1
+//article page end
+
+//menu styles
+@keyframes menu-animation
+	0%
+		opacity: 1
+		transform: scale(0.01) translateY(0)
+		transition: ease-out
+	99.9%
+		opacity: 1
+		height: 0
+		padding-bottom: 100%
+		border-radius: 100%
+	100%
+		opacity: 1
+		transform: scale(2) translateY(0px)
+		height: 100%
+		padding-bottom: 0
+		border-radius: 0
+@keyframes menu-rotate
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+.body-menu-open
+	overflow: hidden
+
+.main-menu-container
+	display: none
+	//position: absolute
+	position: fixed
+	top: 0
+	right: 0
+	width: calc(69% + 1px)
+	height: 100%
+	z-index: 9
+	//overflow-y: scroll
+	//background: #fff
+	//border-radius: 0% 0% 0% 100%
+	animation-name: menubg
+	animation-duration: 5s
+	animation-iteration-count: 1
+	animation-timing-function: lineaar
+	border-radius: 0
+	overflow: hidden
+.menu-open+.main-menu-container
+	display: block
+
+.main-menu-container:before
+	content: ''
+	position: absolute
+	top: calc(-100% + 97px)
+	right: calc(-100% + 100% / 0.69 * 0.17 + 42px)
+	bottom: 0
+	left: 0
+	margin: auto
+	background-color: rgba(19, 19, 19, 1)
+	width: 100%
+	height: 0
+	padding-bottom: 100%
+	border-radius: 100%
+	transform: scale(0.07) translateY(0)
+	overflow: hidden
+
+.menu-btn.menu-open+.main-menu-container:before
+	width: 100%
+	animation: menu-animation .8s ease-out forwards
+	transform: scale(4) translateY(0)
+
+.menu-btn
+	position: absolute
+	top: 33px
+	right: 8.5%
+	width: 45px
+	height: 31px
+	background: transparent
+	z-index: 10
+	display: flex
+	align-items: center
+	cursor: pointer
+
+.menu-icon
+	&:before,
+	&:after
+		content: ''
+	&:before
+		top: -15px
+	&:after
+		bottom: -15px
+	&, &:before, &:after
+		transition: all .5s ease-in-out
+		position: absolute	
+		background: #fff
+		display: block
+		width: 100%
+		height: 4px
+		border-radius: 4px
+
+.menu-open
+	.menu-icon
+		background: transparent
+		animation-name: menu-rotate
+		animation-duration: 1s
+
+		&:before
+			transform: rotate(45deg)
+			top: 0px
+		&:after
+			transform: rotate(-45deg)
+			bottom: 0px
+
+//menu-lists styles
+.menu-wrap
+	width: 100%
+	height: 100%
+	overflow-y: scroll
+	z-index: 10
+	position: relative
+	text-align: center
+	display: flex
+	align-items: center
+
+	ul
+		list-style-type: none
+	li
+		margin: 15px 0
+.menu-subcat-list,
+.menu-list
+	margin: 0
+	padding: 0
+.menu-list
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+.menu-cat-item
+	min-width: 34%
+.menu-cat-link,
+.menu-subcat-link
+	color: #ebebeb
+	display: block
+.menu-cat-link
+	line-height: 1
+	font-family: 'lora'
+	font-size: 24px
+.menu-subcat-link
+	font-size: 20px
+	line-height: 1.2
+
+.menu-subcat-item
+	opacity: 0
+	transform: translateY(0)
+.menu-open + .main-menu-container .menu-subcat-item
+	animation: menu-show-cat .8s ease-out forwards 0.5s
+@keyframes menu-show-cat
+	0%
+		transform: translateY(36px)
+		opacity: 0
+		transition: all .35s ease-out
+	100%
+		transform: translateY(0)
+		opacity: 1
+@keyframes menu-show-subcat
+	0%
+		transform: translateY(36px)
+		opacity: 0
+		transition: all .35s ease-out
+	100%
+		transform: translateY(0)
+		opacity: 1
+
+.menu-cat-link
+	opacity: 0
+	transform: translateY(36px)
+.menu-open + .main-menu-container .menu-cat-link
+	animation: menu-show-cat .8s ease-out forwards
+	animation-delay: 1s
+
+
+
 
 @import "media" // Always at the end
